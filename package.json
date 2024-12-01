@@ -1,0 +1,9 @@
+{
+    "name": "slapjack",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "cd client && npm install && npm run build && cd ../server && npm install",
+      "start": "cd server && npm install && node src/server.js",
+      "postinstall": "cd server && npm install"
+    }
+}

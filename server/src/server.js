@@ -26,12 +26,11 @@ app.use(cors(CONFIG.server.cors));
 app.use(express.json());
 app.use(rateLimitMiddleware('global'));
 
-// Health check endpoint
+// Add this before starting the server
 app.get('/health', (req, res) => {
-  res.json({ 
-    status: 'healthy',
-    uptime: process.uptime(),
-    timestamp: new Date().toISOString()
+  res.status(200).json({
+      status: 'healthy',
+      timestamp: new Date().toISOString()
   });
 });
 
